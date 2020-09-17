@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      component: worker
+  template:
+    metadata:
+      labels:
+        component: worker
+    spec:
+      containers:
+        - name: worker
+          image: grubykarol/locust
+          env:
+            - name: ATTACKED_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: locust-cm
+                  key: ATTACKED_HOST
+            - name: LOCUST_MODE
+              value: WORKER
+            - name: LOCUST_MASTER_HOST
+              value: master-cluster-ip-service
+          volumeMounts:
+            - mountPath: /locust
+              name: locust-scripts
+      volumes:
+        - name: locust-scripts
+          configMap:
+            name: scripts-cm
+          

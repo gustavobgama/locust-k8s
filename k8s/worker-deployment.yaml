@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: worker
-          image: grubykarol/locust
+          image: gustavobgama/locust
           env:
             - name: ATTACKED_HOST
               valueFrom:

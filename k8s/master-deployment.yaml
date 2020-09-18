@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: master
-          image: grubykarol/locust
+          image: gustavobgama/locust
           ports:
             - containerPort: 5557
               name: comm

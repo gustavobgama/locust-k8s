@@ -8,7 +8,7 @@ services:
      - "5557:5557"
      - "5558:5558"
     environment:
-      ATTACKED_HOST: https://lerta.com.br
+      ATTACKED_HOST: https://computer-database.gatling.io
       LOCUST_MODE: master
       LOCUST_MASTER_BIND_PORT: 5557
       TASK_DELAY_FROM: 5
@@ -20,7 +20,7 @@ services:
   worker:
     image: "grubykarol/locust"
     environment:
-      ATTACKED_HOST: https://lerta.com.br
+      ATTACKED_HOST: https://computer-database.gatling.io
       LOCUST_MODE: worker
       LOCUST_MASTER_HOST: master
       LOCUST_MASTER_BIND_PORT: 5557

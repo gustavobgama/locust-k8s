@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: locust-cm
 data:
-  ATTACKED_HOST: https://lerta.com.br
+  ATTACKED_HOST: https://computer-database.gatling.io

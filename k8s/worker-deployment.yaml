@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: worker-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       component: worker
@@ -28,6 +28,11 @@ spec:
           volumeMounts:
             - mountPath: /locust
               name: locust-scripts
+          resources:
+            limits:
+              cpu: 100m
+            requests:
+              cpu: 100m
       volumes:
         - name: locust-scripts
           configMap:

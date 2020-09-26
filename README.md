@@ -23,7 +23,7 @@ You can also execute the load tests without the interface passing the command li
 
 ## Execute locust with the master/worker mode using docker compose
 
-    $ docker-compose up --scale worker=4
+    $ docker-compose up -d --scale worker=4
 
 The locust web interface will be available [here](http://127.0.0.1:8089/).
 

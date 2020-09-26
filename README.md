@@ -33,15 +33,15 @@ For ultimate scalability and automation you can use the kubernetes to execute lo
 
 1. Start the cluster and enable some addons:
 
-    $ minikube start
-    $ minikube addons enable ingress
-    $ minikube addons enable metrics-server
+        $ minikube start
+        $ minikube addons enable ingress
+        $ minikube addons enable metrics-server
 
 2. Configure the cluster and execute test:
 
-    $ kubectl apply -f ./k8s
-    $ minikube service master-load-balancer-service (open the locust web interface)
+        $ kubectl apply -f ./k8s
+        $ minikube service master-load-balancer-service (open the locust web interface)
 
 3. After tests you can remove the artifacts created:
 
-    $ kubectl delete configmap,service,deployment,ingress --all
+        $ kubectl delete configmap,service,deployment,ingress --all

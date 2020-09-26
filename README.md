@@ -42,6 +42,6 @@ For ultimate scalability and automation you can use the kubernetes to execute lo
         $ kubectl apply -f ./k8s
         $ minikube service master-load-balancer-service (open the locust web interface)
 
-3. After tests you can remove the artifacts created:
+3. After the tests you can remove the created resources:
 
-        $ kubectl delete configmap,service,deployment,ingress --all
+        $ kubectl delete -f ./k8s

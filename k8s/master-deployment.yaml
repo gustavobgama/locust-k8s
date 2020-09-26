@@ -30,9 +30,9 @@ spec:
               value: MASTER
           volumeMounts:
             - mountPath: /locust
-              name: locust-scripts
+              name: locustfile
       volumes:
-        - name: locust-scripts
+        - name: locustfile
           configMap:
-            name: scripts-cm
+            name: locustfile
           
